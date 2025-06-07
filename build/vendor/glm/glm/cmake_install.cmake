@@ -1,4 +1,4 @@
-# Install script for directory: /home/mael-archenault/Desktop/cube_solver/v1.0/vendor/glm/glm
+# Install script for directory: /home/mael-archenault/Desktop/Rubiks-Cube-Solver/vendor/glm/glm
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

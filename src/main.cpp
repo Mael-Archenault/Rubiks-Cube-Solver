@@ -1,36 +1,13 @@
 #include <iostream>
-#include "Vertex.h"
 #include "Shader.h"
-#include "Cube.h"
 #include "CubePiece.h"
-#include "Triangle.h"
 #include "RubiksCube.h"
-#include "point_transformations.h"
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-
-
-const char *vertexShaderSource = "#version 330 core\n"
-    "layout (location = 0) in vec3 aPos;\n"
-    "layout (location = 1) in vec3 aColor;\n"
-    "out vec3 ourColor;\n"
-    "void main()\n"
-    "{\n"
-    "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
-    "   ourColor = aColor;\n"
-    "}\0";
-
-const char* fragmentShaderSource = "#version 330 core\n"
-    "out vec4 FragColor;\n"
-    "in vec3 ourColor;\n"
-    "void main()\n"
-    "{\n"
-    "FragColor = vec4(ourColor, 1.0f);\n"
-    "}\0";
 
 
 // Window dimensions
@@ -42,9 +19,9 @@ static double lastMouseX = static_cast<double>(WIDTH) / 2.0;
 static double lastMouseY = static_cast<double>(HEIGHT) / 2.0;
 const float MOUSE_SENSITIVITY = 0.2f;
 
-static float cameraYaw = -90.0f; // Initial yaw, looking towards -Z
-static float cameraPitch = 0.0f;   // Initial pitch
-static float cameraDistance = 3.0f; // Initial distance from origin
+static float cameraYaw = 45.0f; // Initial yaw, looking towards -Z
+static float cameraPitch = 45.0f;   // Initial pitch
+static float cameraDistance = 8.0f; // Initial distance from origin
 
 void mouse_button_callback(GLFWwindow* window, int button, int action, int mods) {
     if (button == GLFW_MOUSE_BUTTON_LEFT) {
@@ -146,13 +123,7 @@ int main() {
 
     // 6. Set the viewport
     glViewport(0, 0, WIDTH, HEIGHT);
-
-    
-    
-    GLfloat lineWidthRange[2];
-    glGetFloatv(GL_ALIASED_LINE_WIDTH_RANGE, lineWidthRange);
-    std::cout << "Supported aliased line width range: " << lineWidthRange[0] << " to " << lineWidthRange[1] << std::endl;
-    
+   
     // Enable depth test
     glEnable(GL_DEPTH_TEST);
 
@@ -209,9 +180,6 @@ int main() {
         glm::mat4 view = glm::lookAt(cameraPos, glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
 
-        // Create model matrix (transforms model from local space to world space)
-        // The RubiksCube itself can be at the origin, or you can transform it here.
-        // The individual pieces' model matrices are handled within RubiksCube::draw.
         glm::mat4 model = glm::mat4(1.0f); // Start with identity matrix
 
         // Send matrices to the shader

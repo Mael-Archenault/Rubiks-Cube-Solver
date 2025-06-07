@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mael-archenault/Desktop/cube_solver/v1.0
+CMAKE_SOURCE_DIR = /home/mael-archenault/Desktop/Rubiks-Cube-Solver
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mael-archenault/Desktop/cube_solver/v1.0/build
+CMAKE_BINARY_DIR = /home/mael-archenault/Desktop/Rubiks-Cube-Solver/build
 
 # Include any dependencies generated for this target.
 include vendor/glm/glm/CMakeFiles/glm.dir/depend.make
@@ -70,18 +70,18 @@ include vendor/glm/glm/CMakeFiles/glm.dir/progress.make
 include vendor/glm/glm/CMakeFiles/glm.dir/flags.make
 
 vendor/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.o: vendor/glm/glm/CMakeFiles/glm.dir/flags.make
-vendor/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.o: /home/mael-archenault/Desktop/cube_solver/v1.0/vendor/glm/glm/detail/glm.cpp
+vendor/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.o: /home/mael-archenault/Desktop/Rubiks-Cube-Solver/vendor/glm/glm/detail/glm.cpp
 vendor/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.o: vendor/glm/glm/CMakeFiles/glm.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mael-archenault/Desktop/cube_solver/v1.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object vendor/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.o"
-	cd /home/mael-archenault/Desktop/cube_solver/v1.0/build/vendor/glm/glm && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT vendor/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.o -MF CMakeFiles/glm.dir/detail/glm.cpp.o.d -o CMakeFiles/glm.dir/detail/glm.cpp.o -c /home/mael-archenault/Desktop/cube_solver/v1.0/vendor/glm/glm/detail/glm.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mael-archenault/Desktop/Rubiks-Cube-Solver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object vendor/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.o"
+	cd /home/mael-archenault/Desktop/Rubiks-Cube-Solver/build/vendor/glm/glm && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT vendor/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.o -MF CMakeFiles/glm.dir/detail/glm.cpp.o.d -o CMakeFiles/glm.dir/detail/glm.cpp.o -c /home/mael-archenault/Desktop/Rubiks-Cube-Solver/vendor/glm/glm/detail/glm.cpp
 
 vendor/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/glm.dir/detail/glm.cpp.i"
-	cd /home/mael-archenault/Desktop/cube_solver/v1.0/build/vendor/glm/glm && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mael-archenault/Desktop/cube_solver/v1.0/vendor/glm/glm/detail/glm.cpp > CMakeFiles/glm.dir/detail/glm.cpp.i
+	cd /home/mael-archenault/Desktop/Rubiks-Cube-Solver/build/vendor/glm/glm && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mael-archenault/Desktop/Rubiks-Cube-Solver/vendor/glm/glm/detail/glm.cpp > CMakeFiles/glm.dir/detail/glm.cpp.i
 
 vendor/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/glm.dir/detail/glm.cpp.s"
-	cd /home/mael-archenault/Desktop/cube_solver/v1.0/build/vendor/glm/glm && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mael-archenault/Desktop/cube_solver/v1.0/vendor/glm/glm/detail/glm.cpp -o CMakeFiles/glm.dir/detail/glm.cpp.s
+	cd /home/mael-archenault/Desktop/Rubiks-Cube-Solver/build/vendor/glm/glm && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mael-archenault/Desktop/Rubiks-Cube-Solver/vendor/glm/glm/detail/glm.cpp -o CMakeFiles/glm.dir/detail/glm.cpp.s
 
 # Object files for target glm
 glm_OBJECTS = \
@@ -93,19 +93,19 @@ glm_EXTERNAL_OBJECTS =
 vendor/glm/glm/libglm.a: vendor/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.o
 vendor/glm/glm/libglm.a: vendor/glm/glm/CMakeFiles/glm.dir/build.make
 vendor/glm/glm/libglm.a: vendor/glm/glm/CMakeFiles/glm.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/mael-archenault/Desktop/cube_solver/v1.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libglm.a"
-	cd /home/mael-archenault/Desktop/cube_solver/v1.0/build/vendor/glm/glm && $(CMAKE_COMMAND) -P CMakeFiles/glm.dir/cmake_clean_target.cmake
-	cd /home/mael-archenault/Desktop/cube_solver/v1.0/build/vendor/glm/glm && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/glm.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/mael-archenault/Desktop/Rubiks-Cube-Solver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libglm.a"
+	cd /home/mael-archenault/Desktop/Rubiks-Cube-Solver/build/vendor/glm/glm && $(CMAKE_COMMAND) -P CMakeFiles/glm.dir/cmake_clean_target.cmake
+	cd /home/mael-archenault/Desktop/Rubiks-Cube-Solver/build/vendor/glm/glm && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/glm.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 vendor/glm/glm/CMakeFiles/glm.dir/build: vendor/glm/glm/libglm.a
 .PHONY : vendor/glm/glm/CMakeFiles/glm.dir/build
 
 vendor/glm/glm/CMakeFiles/glm.dir/clean:
-	cd /home/mael-archenault/Desktop/cube_solver/v1.0/build/vendor/glm/glm && $(CMAKE_COMMAND) -P CMakeFiles/glm.dir/cmake_clean.cmake
+	cd /home/mael-archenault/Desktop/Rubiks-Cube-Solver/build/vendor/glm/glm && $(CMAKE_COMMAND) -P CMakeFiles/glm.dir/cmake_clean.cmake
 .PHONY : vendor/glm/glm/CMakeFiles/glm.dir/clean
 
 vendor/glm/glm/CMakeFiles/glm.dir/depend:
-	cd /home/mael-archenault/Desktop/cube_solver/v1.0/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mael-archenault/Desktop/cube_solver/v1.0 /home/mael-archenault/Desktop/cube_solver/v1.0/vendor/glm/glm /home/mael-archenault/Desktop/cube_solver/v1.0/build /home/mael-archenault/Desktop/cube_solver/v1.0/build/vendor/glm/glm /home/mael-archenault/Desktop/cube_solver/v1.0/build/vendor/glm/glm/CMakeFiles/glm.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/mael-archenault/Desktop/Rubiks-Cube-Solver/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mael-archenault/Desktop/Rubiks-Cube-Solver /home/mael-archenault/Desktop/Rubiks-Cube-Solver/vendor/glm/glm /home/mael-archenault/Desktop/Rubiks-Cube-Solver/build /home/mael-archenault/Desktop/Rubiks-Cube-Solver/build/vendor/glm/glm /home/mael-archenault/Desktop/Rubiks-Cube-Solver/build/vendor/glm/glm/CMakeFiles/glm.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : vendor/glm/glm/CMakeFiles/glm.dir/depend
 

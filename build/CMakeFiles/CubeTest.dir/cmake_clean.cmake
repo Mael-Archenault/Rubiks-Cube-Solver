@@ -1,6 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/CubeTest.dir/src/Cube.cpp.o"
-  "CMakeFiles/CubeTest.dir/src/Cube.cpp.o.d"
   "CMakeFiles/CubeTest.dir/src/CubePiece.cpp.o"
   "CMakeFiles/CubeTest.dir/src/CubePiece.cpp.o.d"
   "CMakeFiles/CubeTest.dir/src/RubiksCube.cpp.o"

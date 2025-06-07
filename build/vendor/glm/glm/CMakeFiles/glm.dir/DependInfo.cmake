@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/mael-archenault/Desktop/cube_solver/v1.0/vendor/glm/glm/detail/glm.cpp" "vendor/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.o" "gcc" "vendor/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.o.d"
+  "/home/mael-archenault/Desktop/Rubiks-Cube-Solver/vendor/glm/glm/detail/glm.cpp" "vendor/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.o" "gcc" "vendor/glm/glm/CMakeFiles/glm.dir/detail/glm.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

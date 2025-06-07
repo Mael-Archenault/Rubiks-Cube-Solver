@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mael-archenault/Desktop/cube_solver/v1.0
+CMAKE_SOURCE_DIR = /home/mael-archenault/Desktop/Rubiks-Cube-Solver
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mael-archenault/Desktop/cube_solver/v1.0/build
+CMAKE_BINARY_DIR = /home/mael-archenault/Desktop/Rubiks-Cube-Solver/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -113,14 +113,14 @@ vendor/glm/glm/clean: vendor/glm/glm/CMakeFiles/glm.dir/clean
 CMakeFiles/CubeTest.dir/all: vendor/glm/glm/CMakeFiles/glm.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CubeTest.dir/build.make CMakeFiles/CubeTest.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CubeTest.dir/build.make CMakeFiles/CubeTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/mael-archenault/Desktop/cube_solver/v1.0/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target CubeTest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/mael-archenault/Desktop/Rubiks-Cube-Solver/build/CMakeFiles --progress-num=1,2,3,4 "Built target CubeTest"
 .PHONY : CMakeFiles/CubeTest.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/CubeTest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mael-archenault/Desktop/cube_solver/v1.0/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mael-archenault/Desktop/Rubiks-Cube-Solver/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/CubeTest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mael-archenault/Desktop/cube_solver/v1.0/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mael-archenault/Desktop/Rubiks-Cube-Solver/build/CMakeFiles 0
 .PHONY : CMakeFiles/CubeTest.dir/rule
 
 # Convenience name for target.
@@ -139,14 +139,14 @@ CMakeFiles/CubeTest.dir/clean:
 vendor/glm/glm/CMakeFiles/glm.dir/all:
 	$(MAKE) $(MAKESILENT) -f vendor/glm/glm/CMakeFiles/glm.dir/build.make vendor/glm/glm/CMakeFiles/glm.dir/depend
 	$(MAKE) $(MAKESILENT) -f vendor/glm/glm/CMakeFiles/glm.dir/build.make vendor/glm/glm/CMakeFiles/glm.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/mael-archenault/Desktop/cube_solver/v1.0/build/CMakeFiles --progress-num=6,7 "Built target glm"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/mael-archenault/Desktop/Rubiks-Cube-Solver/build/CMakeFiles --progress-num=5,6 "Built target glm"
 .PHONY : vendor/glm/glm/CMakeFiles/glm.dir/all
 
 # Build rule for subdir invocation for target.
 vendor/glm/glm/CMakeFiles/glm.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mael-archenault/Desktop/cube_solver/v1.0/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mael-archenault/Desktop/Rubiks-Cube-Solver/build/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vendor/glm/glm/CMakeFiles/glm.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mael-archenault/Desktop/cube_solver/v1.0/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mael-archenault/Desktop/Rubiks-Cube-Solver/build/CMakeFiles 0
 .PHONY : vendor/glm/glm/CMakeFiles/glm.dir/rule
 
 # Convenience name for target.

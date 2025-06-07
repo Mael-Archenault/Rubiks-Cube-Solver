@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/mael-archenault/Desktop/cube_solver/v1.0/vendor/glm
+CXX_INCLUDES = -I/home/mael-archenault/Desktop/Rubiks-Cube-Solver/vendor/glm
 
 CXX_FLAGS = 
 

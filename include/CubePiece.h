@@ -15,10 +15,9 @@ private:
     static bool s_resourcesInitialized;
 
 public:
-    // glm::vec3 rotation; // Replaced by quaternion
     glm::quat orientation; // Stores the piece's current orientation
     CubePiece();
-    ~CubePiece(); // Destructor will no longer delete shared resources
+    ~CubePiece(); 
     
     // Static methods to manage shared resources
     static void initSharedResources();
@@ -29,8 +28,6 @@ public:
     void drawEdges(Shader& shader);
     
     glm::mat4 get_model();
-    // void update_rotation(glm::vec3 new_angle); // Replaced by update_orientation
     void update_orientation(glm::quat rotation_quat);
-    std::string name;
 
 };

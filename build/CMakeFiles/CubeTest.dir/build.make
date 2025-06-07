@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mael-archenault/Desktop/cube_solver/v1.0
+CMAKE_SOURCE_DIR = /home/mael-archenault/Desktop/Rubiks-Cube-Solver
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mael-archenault/Desktop/cube_solver/v1.0/build
+CMAKE_BINARY_DIR = /home/mael-archenault/Desktop/Rubiks-Cube-Solver/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/CubeTest.dir/depend.make
@@ -70,65 +70,50 @@ include CMakeFiles/CubeTest.dir/progress.make
 include CMakeFiles/CubeTest.dir/flags.make
 
 CMakeFiles/CubeTest.dir/src/main.cpp.o: CMakeFiles/CubeTest.dir/flags.make
-CMakeFiles/CubeTest.dir/src/main.cpp.o: /home/mael-archenault/Desktop/cube_solver/v1.0/src/main.cpp
+CMakeFiles/CubeTest.dir/src/main.cpp.o: /home/mael-archenault/Desktop/Rubiks-Cube-Solver/src/main.cpp
 CMakeFiles/CubeTest.dir/src/main.cpp.o: CMakeFiles/CubeTest.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mael-archenault/Desktop/cube_solver/v1.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CubeTest.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CubeTest.dir/src/main.cpp.o -MF CMakeFiles/CubeTest.dir/src/main.cpp.o.d -o CMakeFiles/CubeTest.dir/src/main.cpp.o -c /home/mael-archenault/Desktop/cube_solver/v1.0/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mael-archenault/Desktop/Rubiks-Cube-Solver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CubeTest.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CubeTest.dir/src/main.cpp.o -MF CMakeFiles/CubeTest.dir/src/main.cpp.o.d -o CMakeFiles/CubeTest.dir/src/main.cpp.o -c /home/mael-archenault/Desktop/Rubiks-Cube-Solver/src/main.cpp
 
 CMakeFiles/CubeTest.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CubeTest.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mael-archenault/Desktop/cube_solver/v1.0/src/main.cpp > CMakeFiles/CubeTest.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mael-archenault/Desktop/Rubiks-Cube-Solver/src/main.cpp > CMakeFiles/CubeTest.dir/src/main.cpp.i
 
 CMakeFiles/CubeTest.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CubeTest.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mael-archenault/Desktop/cube_solver/v1.0/src/main.cpp -o CMakeFiles/CubeTest.dir/src/main.cpp.s
-
-CMakeFiles/CubeTest.dir/src/Cube.cpp.o: CMakeFiles/CubeTest.dir/flags.make
-CMakeFiles/CubeTest.dir/src/Cube.cpp.o: /home/mael-archenault/Desktop/cube_solver/v1.0/src/Cube.cpp
-CMakeFiles/CubeTest.dir/src/Cube.cpp.o: CMakeFiles/CubeTest.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mael-archenault/Desktop/cube_solver/v1.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CubeTest.dir/src/Cube.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CubeTest.dir/src/Cube.cpp.o -MF CMakeFiles/CubeTest.dir/src/Cube.cpp.o.d -o CMakeFiles/CubeTest.dir/src/Cube.cpp.o -c /home/mael-archenault/Desktop/cube_solver/v1.0/src/Cube.cpp
-
-CMakeFiles/CubeTest.dir/src/Cube.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CubeTest.dir/src/Cube.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mael-archenault/Desktop/cube_solver/v1.0/src/Cube.cpp > CMakeFiles/CubeTest.dir/src/Cube.cpp.i
-
-CMakeFiles/CubeTest.dir/src/Cube.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CubeTest.dir/src/Cube.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mael-archenault/Desktop/cube_solver/v1.0/src/Cube.cpp -o CMakeFiles/CubeTest.dir/src/Cube.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mael-archenault/Desktop/Rubiks-Cube-Solver/src/main.cpp -o CMakeFiles/CubeTest.dir/src/main.cpp.s
 
 CMakeFiles/CubeTest.dir/src/CubePiece.cpp.o: CMakeFiles/CubeTest.dir/flags.make
-CMakeFiles/CubeTest.dir/src/CubePiece.cpp.o: /home/mael-archenault/Desktop/cube_solver/v1.0/src/CubePiece.cpp
+CMakeFiles/CubeTest.dir/src/CubePiece.cpp.o: /home/mael-archenault/Desktop/Rubiks-Cube-Solver/src/CubePiece.cpp
 CMakeFiles/CubeTest.dir/src/CubePiece.cpp.o: CMakeFiles/CubeTest.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mael-archenault/Desktop/cube_solver/v1.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CubeTest.dir/src/CubePiece.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CubeTest.dir/src/CubePiece.cpp.o -MF CMakeFiles/CubeTest.dir/src/CubePiece.cpp.o.d -o CMakeFiles/CubeTest.dir/src/CubePiece.cpp.o -c /home/mael-archenault/Desktop/cube_solver/v1.0/src/CubePiece.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mael-archenault/Desktop/Rubiks-Cube-Solver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CubeTest.dir/src/CubePiece.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CubeTest.dir/src/CubePiece.cpp.o -MF CMakeFiles/CubeTest.dir/src/CubePiece.cpp.o.d -o CMakeFiles/CubeTest.dir/src/CubePiece.cpp.o -c /home/mael-archenault/Desktop/Rubiks-Cube-Solver/src/CubePiece.cpp
 
 CMakeFiles/CubeTest.dir/src/CubePiece.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CubeTest.dir/src/CubePiece.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mael-archenault/Desktop/cube_solver/v1.0/src/CubePiece.cpp > CMakeFiles/CubeTest.dir/src/CubePiece.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mael-archenault/Desktop/Rubiks-Cube-Solver/src/CubePiece.cpp > CMakeFiles/CubeTest.dir/src/CubePiece.cpp.i
 
 CMakeFiles/CubeTest.dir/src/CubePiece.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CubeTest.dir/src/CubePiece.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mael-archenault/Desktop/cube_solver/v1.0/src/CubePiece.cpp -o CMakeFiles/CubeTest.dir/src/CubePiece.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mael-archenault/Desktop/Rubiks-Cube-Solver/src/CubePiece.cpp -o CMakeFiles/CubeTest.dir/src/CubePiece.cpp.s
 
 CMakeFiles/CubeTest.dir/src/RubiksCube.cpp.o: CMakeFiles/CubeTest.dir/flags.make
-CMakeFiles/CubeTest.dir/src/RubiksCube.cpp.o: /home/mael-archenault/Desktop/cube_solver/v1.0/src/RubiksCube.cpp
+CMakeFiles/CubeTest.dir/src/RubiksCube.cpp.o: /home/mael-archenault/Desktop/Rubiks-Cube-Solver/src/RubiksCube.cpp
 CMakeFiles/CubeTest.dir/src/RubiksCube.cpp.o: CMakeFiles/CubeTest.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mael-archenault/Desktop/cube_solver/v1.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CubeTest.dir/src/RubiksCube.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CubeTest.dir/src/RubiksCube.cpp.o -MF CMakeFiles/CubeTest.dir/src/RubiksCube.cpp.o.d -o CMakeFiles/CubeTest.dir/src/RubiksCube.cpp.o -c /home/mael-archenault/Desktop/cube_solver/v1.0/src/RubiksCube.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/mael-archenault/Desktop/Rubiks-Cube-Solver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CubeTest.dir/src/RubiksCube.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CubeTest.dir/src/RubiksCube.cpp.o -MF CMakeFiles/CubeTest.dir/src/RubiksCube.cpp.o.d -o CMakeFiles/CubeTest.dir/src/RubiksCube.cpp.o -c /home/mael-archenault/Desktop/Rubiks-Cube-Solver/src/RubiksCube.cpp
 
 CMakeFiles/CubeTest.dir/src/RubiksCube.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/CubeTest.dir/src/RubiksCube.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mael-archenault/Desktop/cube_solver/v1.0/src/RubiksCube.cpp > CMakeFiles/CubeTest.dir/src/RubiksCube.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mael-archenault/Desktop/Rubiks-Cube-Solver/src/RubiksCube.cpp > CMakeFiles/CubeTest.dir/src/RubiksCube.cpp.i
 
 CMakeFiles/CubeTest.dir/src/RubiksCube.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/CubeTest.dir/src/RubiksCube.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mael-archenault/Desktop/cube_solver/v1.0/src/RubiksCube.cpp -o CMakeFiles/CubeTest.dir/src/RubiksCube.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mael-archenault/Desktop/Rubiks-Cube-Solver/src/RubiksCube.cpp -o CMakeFiles/CubeTest.dir/src/RubiksCube.cpp.s
 
 # Object files for target CubeTest
 CubeTest_OBJECTS = \
 "CMakeFiles/CubeTest.dir/src/main.cpp.o" \
-"CMakeFiles/CubeTest.dir/src/Cube.cpp.o" \
 "CMakeFiles/CubeTest.dir/src/CubePiece.cpp.o" \
 "CMakeFiles/CubeTest.dir/src/RubiksCube.cpp.o"
 
@@ -136,7 +121,6 @@ CubeTest_OBJECTS = \
 CubeTest_EXTERNAL_OBJECTS =
 
 CubeTest: CMakeFiles/CubeTest.dir/src/main.cpp.o
-CubeTest: CMakeFiles/CubeTest.dir/src/Cube.cpp.o
 CubeTest: CMakeFiles/CubeTest.dir/src/CubePiece.cpp.o
 CubeTest: CMakeFiles/CubeTest.dir/src/RubiksCube.cpp.o
 CubeTest: CMakeFiles/CubeTest.dir/build.make
@@ -144,7 +128,7 @@ CubeTest: vendor/glm/glm/libglm.a
 CubeTest: /usr/lib/x86_64-linux-gnu/libglfw.so.3.3
 CubeTest: /usr/lib/x86_64-linux-gnu/libGLEW.so
 CubeTest: CMakeFiles/CubeTest.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/mael-archenault/Desktop/cube_solver/v1.0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable CubeTest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/mael-archenault/Desktop/Rubiks-Cube-Solver/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable CubeTest"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CubeTest.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -156,6 +140,6 @@ CMakeFiles/CubeTest.dir/clean:
 .PHONY : CMakeFiles/CubeTest.dir/clean
 
 CMakeFiles/CubeTest.dir/depend:
-	cd /home/mael-archenault/Desktop/cube_solver/v1.0/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mael-archenault/Desktop/cube_solver/v1.0 /home/mael-archenault/Desktop/cube_solver/v1.0 /home/mael-archenault/Desktop/cube_solver/v1.0/build /home/mael-archenault/Desktop/cube_solver/v1.0/build /home/mael-archenault/Desktop/cube_solver/v1.0/build/CMakeFiles/CubeTest.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/mael-archenault/Desktop/Rubiks-Cube-Solver/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mael-archenault/Desktop/Rubiks-Cube-Solver /home/mael-archenault/Desktop/Rubiks-Cube-Solver /home/mael-archenault/Desktop/Rubiks-Cube-Solver/build /home/mael-archenault/Desktop/Rubiks-Cube-Solver/build /home/mael-archenault/Desktop/Rubiks-Cube-Solver/build/CMakeFiles/CubeTest.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/CubeTest.dir/depend
 

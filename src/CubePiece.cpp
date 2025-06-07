@@ -11,31 +11,31 @@ const float cubeVertices[] = {
      0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 0.0f, // Bottom-right
      0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 0.0f, // Top-right
     -0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 0.0f, // Top-left
-    // Back face (Black, was Orange)
-    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 0.0f, // Bottom-left
-     0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 0.0f, // Bottom-right
-     0.5f,  0.5f, -0.5f,  0.0f, 0.0f, 0.0f, // Top-right
-    -0.5f,  0.5f, -0.5f,  0.0f, 0.0f, 0.0f, // Top-left
+    // Back face (Orange)
+    -0.5f, -0.5f, -0.5f,  1.0f, 0.5f, 0.0f, // Bottom-left
+     0.5f, -0.5f, -0.5f,  1.0f, 0.5f, 0.0f, // Bottom-right
+     0.5f,  0.5f, -0.5f,  1.0f, 0.5f, 0.0f, // Top-right
+    -0.5f,  0.5f, -0.5f,  1.0f, 0.5f, 0.0f, // Top-left
     // Top face (White)
     -0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f, // Front-top-left (from front view)
      0.5f,  0.5f,  0.5f,  1.0f, 1.0f, 1.0f, // Front-top-right
      0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f, // Back-top-right
     -0.5f,  0.5f, -0.5f,  1.0f, 1.0f, 1.0f, // Back-top-left
-    // Bottom face (Black, was Yellow)
-    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 0.0f, // Front-bottom-left
-     0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 0.0f, // Front-bottom-right
-     0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 0.0f, // Back-bottom-right
-    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 0.0f, // Back-bottom-left
+    // Bottom face (Yellow)
+    -0.5f, -0.5f,  0.5f,  1.0f, 1.0f, 0.0f, // Front-bottom-left
+     0.5f, -0.5f,  0.5f,  1.0f, 1.0f, 0.0f, // Front-bottom-right
+     0.5f, -0.5f, -0.5f,  1.0f, 1.0f, 0.0f, // Back-bottom-right
+    -0.5f, -0.5f, -0.5f,  1.0f, 1.0f, 0.0f, // Back-bottom-left
     // Right face (Blue)
      0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 1.0f, // Front-bottom-right
      0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 1.0f, // Front-top-right
      0.5f,  0.5f, -0.5f,  0.0f, 0.0f, 1.0f, // Back-top-right
      0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 1.0f, // Back-bottom-right
-    // Left face (Black, was Green)
-    -0.5f, -0.5f,  0.5f,  0.0f, 0.0f, 0.0f, // Front-bottom-left
-    -0.5f,  0.5f,  0.5f,  0.0f, 0.0f, 0.0f, // Front-top-left
-    -0.5f,  0.5f, -0.5f,  0.0f, 0.0f, 0.0f, // Back-top-left
-    -0.5f, -0.5f, -0.5f,  0.0f, 0.0f, 0.0f  // Back-bottom-left
+    // Left face (Green)
+    -0.5f, -0.5f,  0.5f,  0.0f, 1.0f, 0.0f, // Front-bottom-left
+    -0.5f,  0.5f,  0.5f,  0.0f, 1.0f, 0.0f, // Front-top-left
+    -0.5f,  0.5f, -0.5f,  0.0f, 1.0f, 0.0f, // Back-top-left
+    -0.5f, -0.5f, -0.5f,  0.0f, 1.0f, 0.0f  // Back-bottom-left
 };
 
 
