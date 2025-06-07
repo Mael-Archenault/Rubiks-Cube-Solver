@@ -1,5 +1,6 @@
 #include "CubePiece.h"
 #include <vector>
+#include <string> // Required for std::to_string
 #include <glm/glm.hpp>
 
 
@@ -131,12 +132,26 @@ void CubePiece::setupMesh(){
     // The individual VAO, VBO members are no longer used for drawing.
 }
 
-void CubePiece::draw(Shader& shader){
+void CubePiece::draw(Shader& shader) {
     if (!s_resourcesInitialized) return;
     shader.use();
     glBindVertexArray(s_VAO);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, s_EBO_faces); // Bind EBO for faces
-    glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
+
+    // Pass the whole visibility array to the shader
+    // This assumes your Shader class can handle array uniform names like "u_faceVisible[0]"
+    for (int i = 0; i < 6; ++i) {
+        std::string uniformName = "u_faceVisible[" + std::to_string(i) + "]";
+        shader.setBool(uniformName, faceVisibility[i]);
+    }
+
+    // Draw each face (6 indices per face)
+    // The order of faces in 'indices' EBO array is: Front, Back, Right, Left, Top, Bottom
+    for (int i = 0; i < 6; ++i) {
+        shader.setInt("u_faceIndex", i); // Tell shader which face this draw call is for
+        // Offset for glDrawElements: i * 6 indices, each index is an unsigned int
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, (void*)(i * 6 * sizeof(unsigned int)));
+    }
     glBindVertexArray(0);
 }
 
@@ -162,4 +177,29 @@ void CubePiece::update_orientation(glm::quat rotation_quat){
     // The order matters: new_orientation = rotation_to_apply * current_orientation
     orientation = rotation_quat * orientation;
     orientation = glm::normalize(orientation); // Keep the quaternion normalized
+}
+
+void CubePiece::set_face_visibilities(int i, int j, int k){
+    for(int l = 0; l < 6; ++l) faceVisibility[l] = false;
+
+    //OK
+    if (k == 2){
+        faceVisibility[0] = true;
+    }
+    if (k == 0){
+        faceVisibility[1] = true;
+    }
+    if (i == 2){
+        faceVisibility[2] = true;
+    }
+    if (i == 0){
+        faceVisibility[3] = true;
+    }
+    if (j == 2){
+        faceVisibility[4] = true;
+    }
+    if (j == 0){
+        faceVisibility[5] = true;
+    }
+
 }

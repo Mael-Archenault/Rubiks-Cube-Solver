@@ -5,20 +5,17 @@ out vec4 FragColor;
 
 in vec3 pointColor;
 
-uniform bool u_isEdge;
-uniform vec4 u_edgeColor;
-uniform bool u_isDarkPiece;
-uniform float u_darkeningFactor;
+uniform int u_faceIndex;
+uniform bool u_faceVisible[6];
+
 
 void main()
 {
-    if (u_isEdge) {
-        FragColor = u_edgeColor; // Opaque black for edges, for example
-    } else {
-        vec3 finalColor = pointColor;
-        if (u_isDarkPiece) {
-            finalColor *= u_darkeningFactor;
-        }
-        FragColor = vec4(finalColor, 1.0f);
+    if (u_faceIndex >= 0 && u_faceIndex < 6 && !u_faceVisible[u_faceIndex])
+    {
+        FragColor = vec4(0.0f, 0.0f, 0.0f, 1.0f);
+        return;
     }
+    FragColor = vec4(pointColor, 1.0f);
+    
 }

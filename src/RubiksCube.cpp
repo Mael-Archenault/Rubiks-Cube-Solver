@@ -22,16 +22,22 @@ RubiksCube::RubiksCube() {
     animatingLayerIndex = -1;
     animatingFacePlane = ' ';
     animationIsClockwise = true;
+
+    // Initialize face visibility (all visible by default)
+    for (int i = 0; i < 6; ++i) {
+        faceVisibility[i] = false;
+    }
 }
 
 RubiksCube::~RubiksCube() {
 }
 
-void RubiksCube::setupMesh() {
+void RubiksCube::init() {
     for (int i = 0; i < 3; ++i) {
         for (int j = 0; j < 3; ++j) {
             for (int k = 0; k < 3; ++k) {
                 cubePieces[i][j][k].setupMesh(); 
+                cubePieces[i][j][k].set_face_visibilities(i, j, k);
             }
         }
     }
@@ -71,7 +77,7 @@ void RubiksCube::draw(Shader& shader) {
                 }
 
                 shader.setMat4("model", finalModel);
-                cubePieces[i][j][k].draw(shader);
+                cubePieces[i][j][k].draw(shader); // Pass visibility state
             }
         }
     }

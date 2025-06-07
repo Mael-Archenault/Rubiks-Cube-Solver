@@ -2,11 +2,21 @@
 
 #include <vector>
 #include <string>
+#include <array> // Required for std::array
 #include "Shader.h"
 #include "CubePiece.h"
 
 
 
+// Define face indices for clarity, matching EBO and shader logic
+enum class CubeFace {
+    FRONT_RED = 0,     // Corresponds to faceVisibility[0]
+    BACK_ORANGE = 1,   // Corresponds to faceVisibility[1]
+    RIGHT_BLUE = 2,    // Corresponds to faceVisibility[2]
+    LEFT_GREEN = 3,    // Corresponds to faceVisibility[3]
+    TOP_WHITE = 4,     // Corresponds to faceVisibility[4]
+    BOTTOM_YELLOW = 5  // Corresponds to faceVisibility[5]
+};
 class RubiksCube
 {
 private:
@@ -22,6 +32,7 @@ private:
 
     std::vector<std::vector<int>> sides;
     std::vector<std::vector<std::vector<CubePiece>>> cubePieces;
+    std::array<bool, 6> faceVisibility; // Stores visibility for Front, Back, Right, Left, Top, Bottom
 
     // Animation state
     bool isAnimating;
@@ -37,8 +48,9 @@ private:
 public:
     RubiksCube();
     ~RubiksCube();
-    void setupMesh();
+    void init();
     void draw(Shader& shader);
     void turn(std::string moveName, bool clockwise); // Changed int to bool
     void update(float deltaTime); // For animation
+
 };

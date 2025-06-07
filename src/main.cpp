@@ -148,7 +148,7 @@ int main() {
     CubePiece::initSharedResources(); // Initialize shared resources once
 
     RubiksCube rubiksCube;
-    rubiksCube.setupMesh(); // This will call setupMesh for each CubePiece
+    rubiksCube.init(); // This will call setupMesh for each CubePiece
     globalRubiksCubePtr = &rubiksCube; // Assign address to global pointer
     
     glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)WIDTH / (float)HEIGHT, 0.1f, 100.0f);
