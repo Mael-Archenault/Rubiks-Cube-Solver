@@ -8,6 +8,8 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include "Linear.h"
+#include "Matrix.h"
 
 
 // Window dimensions
@@ -79,125 +81,173 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
                 globalRubiksCubePtr->turn("F", clockwise);
             } else if (key == GLFW_KEY_B) {
                 globalRubiksCubePtr->turn("B", clockwise);
+            } else if (key == GLFW_KEY_SPACE) {
+                if (globalRubiksCubePtr->is_solved()){
+                    std::cout<<"Solved"<<std::endl;
+                }
+                else{
+                    std::cout<<"Not solved"<<std::endl;
+                }
             }
+
         }
     }
+}
+
+
+float get_decaying_value(float x) {
+    // Pre-calculate the decay constant k = log(10) / 10000
+    // log(10) is used because exp(-k * 10000) = 0.1 => -k * 10000 = log(0.1) = -log(10)
+    static const float decay_constant = std::log(10.0f) / 10000.0f;
+
+    return std::exp(-decay_constant * x);
 }
 
 
 
 
 int main() {
-    // 1. Initialize GLFW
-    if (!glfwInit()) {
-        std::cout << "GLFW Initialization failed!" << std::endl;
-        glfwTerminate();
-        return 1;
-    }
+    // // 1. Initialize GLFW
+    // if (!glfwInit()) {
+    //     std::cout << "GLFW Initialization failed!" << std::endl;
+    //     glfwTerminate();
+    //     return 1;
+    // }
 
-    // 2. Set OpenGL version and profile
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // Required for macOS, good practice
+    // // 2. Set OpenGL version and profile
+    // glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    // glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    // glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    // glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // Required for macOS, good practice
 
-    // 3. Create a GLFW window
-    GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Rubiks Cube Solver", nullptr, nullptr);
-    if (!window) {
-        std::cout << "GLFW Window creation failed!" << std::endl;
-        glfwTerminate();
-        return 1;
-    }
+    // // 3. Create a GLFW window
+    // GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Rubiks Cube Solver", nullptr, nullptr);
+    // if (!window) {
+    //     std::cout << "GLFW Window creation failed!" << std::endl;
+    //     glfwTerminate();
+    //     return 1;
+    // }
 
-    // 4. Make the window's context current
-    glfwMakeContextCurrent(window);
+    // // 4. Make the window's context current
+    // glfwMakeContextCurrent(window);
 
-    // 5. Initialize GLEW
-    glewExperimental = GL_TRUE; // Required for core profile
-    if (glewInit() != GLEW_OK) {
-        std::cout << "GLEW Initialization failed!" << std::endl;
-        glfwDestroyWindow(window);
-        glfwTerminate();
-        return 1;
-    }
+    // // 5. Initialize GLEW
+    // glewExperimental = GL_TRUE; // Required for core profile
+    // if (glewInit() != GLEW_OK) {
+    //     std::cout << "GLEW Initialization failed!" << std::endl;
+    //     glfwDestroyWindow(window);
+    //     glfwTerminate();
+    //     return 1;
+    // }
 
-    // 6. Set the viewport
-    glViewport(0, 0, WIDTH, HEIGHT);
+    // // 6. Set the viewport
+    // glViewport(0, 0, WIDTH, HEIGHT);
    
-    // Enable depth test
-    glEnable(GL_DEPTH_TEST);
+    // // Enable depth test
+    // glEnable(GL_DEPTH_TEST);
 
-    // Register mouse callbacks
-    glfwSetMouseButtonCallback(window, mouse_button_callback);
-    glfwSetCursorPosCallback(window, cursor_position_callback);
-    glfwSetScrollCallback(window, scroll_callback);
-    glfwSetKeyCallback(window, key_callback); // Register the key callback
-
-
-
-    glEnable(GL_CULL_FACE);
-    glCullFace(GL_BACK); // Typically cull back faces for solid objects
-    glFrontFace(GL_CCW);
-
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    // // Register mouse callbacks
+    // glfwSetMouseButtonCallback(window, mouse_button_callback);
+    // glfwSetCursorPosCallback(window, cursor_position_callback);
+    // glfwSetScrollCallback(window, scroll_callback);
+    // glfwSetKeyCallback(window, key_callback); // Register the key callback
 
 
-    Shader shader("../shaders/shader.vert", "../shaders/shader.frag");
 
-    CubePiece::initSharedResources(); // Initialize shared resources once
+    // glEnable(GL_CULL_FACE);
+    // glCullFace(GL_BACK); // Typically cull back faces for solid objects
+    // glFrontFace(GL_CCW);
 
-    RubiksCube rubiksCube;
-    rubiksCube.init(); // This will call setupMesh for each CubePiece
-    globalRubiksCubePtr = &rubiksCube; // Assign address to global pointer
+    // glEnable(GL_BLEND);
+    // glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+
+    // Shader shader("../shaders/shader.vert", "../shaders/shader.frag");
+
+    // CubePiece::initSharedResources(); // Initialize shared resources once
+
+    // RubiksCube rubiksCube;
+    // rubiksCube.init(); // This will call setupMesh for each CubePiece
+    // globalRubiksCubePtr = &rubiksCube; // Assign address to global pointer
     
-    glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)WIDTH / (float)HEIGHT, 0.1f, 100.0f);
+    // glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)WIDTH / (float)HEIGHT, 0.1f, 100.0f);
 
-    // Removed the initial automatic turn, it will now be triggered by key presses.
-    float lastFrameTime = 0.0f;
+    // // Removed the initial automatic turn, it will now be triggered by key presses.
+    // float lastFrameTime = 0.0f;
+
+
+    Linear linear = Linear(2,3,4,10, true, sigmoid);
+    linear.set_input({{0.0f}, {1.0f}});
+    linear.set_desired_output({{0.0f}, {1.0f}, {0.5f}});
+
+
+    linear.forward();
+    linear.print_node_values();
+
+    //linear.print_weights();
+    float best_error = 1000.0f;
+    for(int i = 0; i < 10000; ++i){
+        linear.forward();
+        linear.backward();
+        linear.update_weights(get_decaying_value(i));
+        linear.update_biases(get_decaying_value(i));
+        float error = linear.get_final_error();
+        if (error<best_error){
+            best_error = error;
+            std::cout<<"Iteration :"<<i<<" Error: "<<error<<std::endl;
+        }
+    }
+    linear.forward();
+    linear.print_node_values();
+    //linear.print_weights();
+    //linear.print_error_values();
+
+    //linear.print_weights();
+    //linear.print_biases();
+
 
     // 7. Main loop
-    while (!glfwWindowShouldClose(window)) {
-        // Poll for and process events
-        glfwPollEvents();
+    // while (!glfwWindowShouldClose(window)) {
+    //     // Poll for and process events
+    //     glfwPollEvents();
 
-        float currentFrameTime = static_cast<float>(glfwGetTime());
-        float deltaTime = currentFrameTime - lastFrameTime;
-        lastFrameTime = currentFrameTime;
-        // Clear the color buffer
-        glClearColor(0.1f, 0.1f, 0.1f, 1.0f); // Darker background
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // Clear depth buffer as well
+    //     float currentFrameTime = static_cast<float>(glfwGetTime());
+    //     float deltaTime = currentFrameTime - lastFrameTime;
+    //     lastFrameTime = currentFrameTime;
+    //     // Clear the color buffer
+    //     glClearColor(0.1f, 0.1f, 0.1f, 1.0f); // Darker background
+    //     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // Clear depth buffer as well
 
-        shader.use(); // Activate the shader
+    //     shader.use(); // Activate the shader
 
-        // Calculate camera position based on yaw, pitch, and distance (orbiting around origin)
-        glm::vec3 cameraPos;
-        cameraPos.x = cameraDistance * cos(glm::radians(cameraYaw)) * cos(glm::radians(cameraPitch));
-        cameraPos.y = cameraDistance * sin(glm::radians(cameraPitch));
-        cameraPos.z = cameraDistance * sin(glm::radians(cameraYaw)) * cos(glm::radians(cameraPitch));
+    //     // Calculate camera position based on yaw, pitch, and distance (orbiting around origin)
+    //     glm::vec3 cameraPos;
+    //     cameraPos.x = cameraDistance * cos(glm::radians(cameraYaw)) * cos(glm::radians(cameraPitch));
+    //     cameraPos.y = cameraDistance * sin(glm::radians(cameraPitch));
+    //     cameraPos.z = cameraDistance * sin(glm::radians(cameraYaw)) * cos(glm::radians(cameraPitch));
 
-        // Update view matrix
-        glm::mat4 view = glm::lookAt(cameraPos, glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+    //     // Update view matrix
+    //     glm::mat4 view = glm::lookAt(cameraPos, glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
 
-        glm::mat4 model = glm::mat4(1.0f); // Start with identity matrix
+    //     glm::mat4 model = glm::mat4(1.0f); // Start with identity matrix
 
-        // Send matrices to the shader
-        shader.setMat4("projection", projection);
-        shader.setMat4("view", view);
-        shader.setMat4("model", model); // This model matrix applies to the whole Rubik's Cube
+    //     // Send matrices to the shader
+    //     shader.setMat4("projection", projection);
+    //     shader.setMat4("view", view);
+    //     shader.setMat4("model", model); // This model matrix applies to the whole Rubik's Cube
 
-        rubiksCube.update(deltaTime); // Update animation state
+    //     rubiksCube.update(deltaTime); // Update animation state
 
-        rubiksCube.draw(shader);
+    //     rubiksCube.draw(shader);
 
-        // Swap front and back buffers
-        glfwSwapBuffers(window);
-    }
+    //     // Swap front and back buffers
+    //     glfwSwapBuffers(window);
+    // }
 
-    CubePiece::cleanupSharedResources(); // Cleanup shared resources
+    // CubePiece::cleanupSharedResources(); // Cleanup shared resources
 
-    // 8. Terminate GLFW
-    glfwTerminate();
+    // // 8. Terminate GLFW
+    // glfwTerminate();
     return 0;
 }

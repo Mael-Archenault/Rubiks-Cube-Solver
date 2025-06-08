@@ -15,6 +15,7 @@ private:
     static GLuint s_VAO, s_VBO, s_EBO_faces, s_EBO_edges;
     static bool s_resourcesInitialized;
     std::array<bool, 6> faceVisibility;
+    std::array<int, 3> initPosition;
 
 public:
     glm::quat orientation; // Stores the piece's current orientation
@@ -31,6 +32,9 @@ public:
     
     glm::mat4 get_model();
     void update_orientation(glm::quat rotation_quat);
+    glm::quat get_orientation();
     void set_face_visibilities(int i, int j, int k);
+    void set_init_position(int i, int j, int k);
+    std::array<int, 3> get_init_position();
 
 };

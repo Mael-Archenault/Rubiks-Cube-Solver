@@ -52,5 +52,7 @@ public:
     void draw(Shader& shader);
     void turn(std::string moveName, bool clockwise); // Changed int to bool
     void update(float deltaTime); // For animation
+    bool is_solved();
+    
 
 };

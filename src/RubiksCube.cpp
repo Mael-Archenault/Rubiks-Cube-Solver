@@ -17,7 +17,7 @@ RubiksCube::RubiksCube() {
     currentAnimationAngleRad = 0.0f;
     frameAddedAngle = 0.0f;
     targetAnimationAngleRad = glm::radians(90.0f);
-    animationSpeedRad = glm::radians(180.0f); 
+    animationSpeedRad = glm::radians(360.0f); 
     animationWorldAxis = glm::vec3(0.0f);
     animatingLayerIndex = -1;
     animatingFacePlane = ' ';
@@ -38,6 +38,7 @@ void RubiksCube::init() {
             for (int k = 0; k < 3; ++k) {
                 cubePieces[i][j][k].setupMesh(); 
                 cubePieces[i][j][k].set_face_visibilities(i, j, k);
+                cubePieces[i][j][k].set_init_position(i, j, k);
             }
         }
     }
@@ -179,3 +180,44 @@ void RubiksCube::update(float deltaTime) {
         
     } 
 }
+
+bool are_orientations_equal(const glm::quat& q1, const glm::quat& q2, double epsilon = 1e-7) {
+    // Check if q1 is approximately equal to q2
+    bool direct_match = (std::abs(q1.w - q2.w) < epsilon) &&
+                        (std::abs(q1.x - q2.x) < epsilon) &&
+                        (std::abs(q1.y - q2.y) < epsilon) &&
+                        (std::abs(q1.z - q2.z) < epsilon);
+
+    if (direct_match) {
+        return true;
+    }
+
+    // Check if q1 is approximately equal to -q2
+    bool negated_match = (std::abs(q1.w + q2.w) < epsilon) && // q1.w - (-q2.w)
+                         (std::abs(q1.x + q2.x) < epsilon) && // q1.x - (-q2.x)
+                         (std::abs(q1.y + q2.y) < epsilon) && // q1.y - (-q2.y)
+                         (std::abs(q1.z + q2.z) < epsilon);   // q1.z - (-q2.z)
+
+    return negated_match;
+}
+
+bool RubiksCube::is_solved(){
+    for(int i = 0; i < 3; ++i){
+        for(int j = 0; j < 3; ++j){
+            for(int k = 0; k < 3; ++k){
+                if(cubePieces[i][j][k].get_init_position() != std::array<int, 3>{i, j, k}){
+                    return false;
+                }
+
+                if (!(j==1 && k==1)&&!(i==1 && k==1)&&!(i==1 && j==1)){//excluding centers and core
+                    if (!are_orientations_equal(cubePieces[i][j][k].get_orientation(), glm::quat(1.0f, 0.0f, 0.0f, 0.0f))){
+                        return false;
+                    }
+                }
+            }
+        }
+    }
+    return true;
+}
+
+                

@@ -409,4 +409,6 @@ CMakeFiles/CubeTest.dir/src/main.cpp.o: \
  /home/mael-archenault/Desktop/Rubiks-Cube-Solver/vendor/glm/glm/gtc/type_ptr.inl \
  /home/mael-archenault/Desktop/Rubiks-Cube-Solver/include/CubePiece.h \
  /home/mael-archenault/Desktop/Rubiks-Cube-Solver/include/RubiksCube.h \
- /usr/include/GLFW/glfw3.h
+ /usr/include/GLFW/glfw3.h \
+ /home/mael-archenault/Desktop/Rubiks-Cube-Solver/include/Linear.h \
+ /home/mael-archenault/Desktop/Rubiks-Cube-Solver/include/Matrix.h

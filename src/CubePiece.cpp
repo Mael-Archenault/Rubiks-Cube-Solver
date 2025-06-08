@@ -4,6 +4,10 @@
 #include <glm/glm.hpp>
 
 
+
+
+
+
 // Define 8 unique vertices for the cube, with positions and colors
 const float cubeVertices[] = {
     // Positions          // Colors
@@ -202,4 +206,17 @@ void CubePiece::set_face_visibilities(int i, int j, int k){
         faceVisibility[5] = true;
     }
 
+}
+
+void CubePiece::set_init_position(int i, int j, int k){
+    initPosition[0] = i;
+    initPosition[1] = j;
+    initPosition[2] = k;
+}
+glm::quat CubePiece::get_orientation(){
+    return orientation;
+}
+
+std::array<int, 3> CubePiece::get_init_position(){
+    return initPosition;
 }

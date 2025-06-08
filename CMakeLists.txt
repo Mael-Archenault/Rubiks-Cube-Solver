@@ -57,7 +57,7 @@ find_package(GLEW REQUIRED)
 find_package(OpenGL REQUIRED) # This finds the libraries and populates OpenGL_LIBRARIES
 
 # Add your executable
-add_executable(CubeTest ../src/main.cpp ../src/CubePiece.cpp ../src/RubiksCube.cpp)
+add_executable(CubeTest ../src/main.cpp ../src/CubePiece.cpp ../src/RubiksCube.cpp ../src/Linear.cpp ../src/Matrix.cpp)
 
 target_include_directories(CubeTest PUBLIC
     ${PROJECT_SOURCE_DIR}/include

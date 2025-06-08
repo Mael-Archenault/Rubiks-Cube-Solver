@@ -166,6 +166,54 @@ src/CubePiece.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CubeTest.dir/build.make CMakeFiles/CubeTest.dir/src/CubePiece.cpp.s
 .PHONY : src/CubePiece.cpp.s
 
+src/Linear.o: src/Linear.cpp.o
+.PHONY : src/Linear.o
+
+# target to build an object file
+src/Linear.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CubeTest.dir/build.make CMakeFiles/CubeTest.dir/src/Linear.cpp.o
+.PHONY : src/Linear.cpp.o
+
+src/Linear.i: src/Linear.cpp.i
+.PHONY : src/Linear.i
+
+# target to preprocess a source file
+src/Linear.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CubeTest.dir/build.make CMakeFiles/CubeTest.dir/src/Linear.cpp.i
+.PHONY : src/Linear.cpp.i
+
+src/Linear.s: src/Linear.cpp.s
+.PHONY : src/Linear.s
+
+# target to generate assembly for a file
+src/Linear.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CubeTest.dir/build.make CMakeFiles/CubeTest.dir/src/Linear.cpp.s
+.PHONY : src/Linear.cpp.s
+
+src/Matrix.o: src/Matrix.cpp.o
+.PHONY : src/Matrix.o
+
+# target to build an object file
+src/Matrix.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CubeTest.dir/build.make CMakeFiles/CubeTest.dir/src/Matrix.cpp.o
+.PHONY : src/Matrix.cpp.o
+
+src/Matrix.i: src/Matrix.cpp.i
+.PHONY : src/Matrix.i
+
+# target to preprocess a source file
+src/Matrix.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CubeTest.dir/build.make CMakeFiles/CubeTest.dir/src/Matrix.cpp.i
+.PHONY : src/Matrix.cpp.i
+
+src/Matrix.s: src/Matrix.cpp.s
+.PHONY : src/Matrix.s
+
+# target to generate assembly for a file
+src/Matrix.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CubeTest.dir/build.make CMakeFiles/CubeTest.dir/src/Matrix.cpp.s
+.PHONY : src/Matrix.cpp.s
+
 src/RubiksCube.o: src/RubiksCube.cpp.o
 .PHONY : src/RubiksCube.o
 
@@ -227,6 +275,12 @@ help:
 	@echo "... src/CubePiece.o"
 	@echo "... src/CubePiece.i"
 	@echo "... src/CubePiece.s"
+	@echo "... src/Linear.o"
+	@echo "... src/Linear.i"
+	@echo "... src/Linear.s"
+	@echo "... src/Matrix.o"
+	@echo "... src/Matrix.i"
+	@echo "... src/Matrix.s"
 	@echo "... src/RubiksCube.o"
 	@echo "... src/RubiksCube.i"
 	@echo "... src/RubiksCube.s"
